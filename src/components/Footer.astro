@@ -3,34 +3,121 @@ const githubUrl = import.meta.env.PUBLIC_GITHUB_REPO_URL ?? 'https://github.com'
 ---
 
 <footer class="footer">
-	<nav class="footer__nav" aria-label="Footer links">
-		<a href="https://docs.sessiondb.in" rel="noopener noreferrer" target="_blank" class="footer__link">Docs</a>
-		<a href="https://demo.sessiondb.in" rel="noopener noreferrer" target="_blank" class="footer__link">Demo</a>
-		<a href={githubUrl} rel="noopener noreferrer" target="_blank" class="footer__link">GitHub</a>
-	</nav>
+	<div class="footer__inner">
+		<div class="footer__brand">
+			<span class="footer__logo">SessionDB</span>
+			<p class="footer__copy">© {new Date().getFullYear()} SessionDB. Open source.</p>
+		</div>
+		<nav class="footer__grid" aria-label="Footer">
+			<div class="footer__col">
+				<h3 class="footer__heading">Product</h3>
+				<ul class="footer__list">
+					<li><a href="https://docs.sessiondb.in" rel="noopener noreferrer" target="_blank" class="footer__link">Docs</a></li>
+					<li><a href="https://demo.sessiondb.in" rel="noopener noreferrer" target="_blank" class="footer__link">Demo</a></li>
+					<li><a href="#features-heading" class="footer__link">Features</a></li>
+					<li><a href="#roadmap-heading" class="footer__link">Roadmap</a></li>
+				</ul>
+			</div>
+			<div class="footer__col">
+				<h3 class="footer__heading">Resources</h3>
+				<ul class="footer__list">
+					<li><a href={githubUrl} rel="noopener noreferrer" target="_blank" class="footer__link">GitHub</a></li>
+					<li><a href="https://docs.sessiondb.in" rel="noopener noreferrer" target="_blank" class="footer__link">Documentation</a></li>
+				</ul>
+			</div>
+			<div class="footer__col">
+				<h3 class="footer__heading">Community</h3>
+				<ul class="footer__list">
+					<li><a href={githubUrl} rel="noopener noreferrer" target="_blank" class="footer__link">GitHub</a></li>
+					<li><a href="#" class="footer__link">Discord</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
 </footer>
 
 <style>
 	.footer {
-		padding: 1.5rem;
+		background: var(--color-bg-elevated);
 		border-top: 1px solid var(--color-border);
-		text-align: center;
+		padding: 3rem 1.5rem 2rem;
 	}
 
-	.footer__nav {
+	.footer__inner {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 3rem;
+		max-width: 72rem;
+		margin: 0 auto;
+	}
+
+	.footer__brand {
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 1.5rem;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.footer__logo {
+		font-size: 1.125rem;
+		font-weight: 700;
+		color: var(--color-text);
+	}
+
+	.footer__copy {
+		font-size: 0.8125rem;
+		color: var(--color-muted);
+		margin: 0;
+	}
+
+	.footer__grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+	}
+
+	.footer__col {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.footer__heading {
+		font-size: 0.8125rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--color-muted);
+		margin: 0;
+	}
+
+	.footer__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
 	}
 
 	.footer__link {
 		font-size: 0.875rem;
 		color: var(--color-muted);
 		text-decoration: none;
+		transition: color 0.2s;
 	}
 
 	.footer__link:hover {
-		color: var(--color-primary);
+		color: var(--color-text);
+	}
+
+	@media (max-width: 768px) {
+		.footer__inner {
+			grid-template-columns: 1fr;
+			text-align: center;
+		}
+
+		.footer__grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>
