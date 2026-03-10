@@ -1,0 +1,37 @@
+---
+const githubUrl = import.meta.env.PUBLIC_GITHUB_REPO_URL ?? 'https://github.com';
+---
+
+<section class="cta" aria-labelledby="cta-heading">
+	<h2 id="cta-heading" class="cta__heading">
+		SessionDB is built by and for the community. <a href={githubUrl} rel="noopener noreferrer" target="_blank" class="cta__link">Star us on GitHub</a> to follow our progress toward the 1.0 release.
+	</h2>
+</section>
+
+<style>
+	.cta {
+		padding: 3rem 1.5rem 4rem;
+		max-width: 40rem;
+		margin: 0 auto;
+		text-align: center;
+		border-top: 1px solid var(--color-border);
+	}
+
+	.cta__heading {
+		font-size: 1.125rem;
+		font-weight: 500;
+		line-height: 1.6;
+		margin: 0;
+		color: var(--color-text);
+	}
+
+	.cta__link {
+		color: var(--color-primary);
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	.cta__link:hover {
+		text-decoration: underline;
+	}
+</style>

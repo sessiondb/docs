@@ -1,0 +1,36 @@
+---
+const githubUrl = import.meta.env.PUBLIC_GITHUB_REPO_URL ?? 'https://github.com';
+---
+
+<footer class="footer">
+	<nav class="footer__nav" aria-label="Footer links">
+		<a href="https://docs.sessiondb.in" rel="noopener noreferrer" target="_blank" class="footer__link">Docs</a>
+		<a href="https://demo.sessiondb.in" rel="noopener noreferrer" target="_blank" class="footer__link">Demo</a>
+		<a href={githubUrl} rel="noopener noreferrer" target="_blank" class="footer__link">GitHub</a>
+	</nav>
+</footer>
+
+<style>
+	.footer {
+		padding: 1.5rem;
+		border-top: 1px solid var(--color-border);
+		text-align: center;
+	}
+
+	.footer__nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1.5rem;
+	}
+
+	.footer__link {
+		font-size: 0.875rem;
+		color: var(--color-muted);
+		text-decoration: none;
+	}
+
+	.footer__link:hover {
+		color: var(--color-primary);
+	}
+</style>

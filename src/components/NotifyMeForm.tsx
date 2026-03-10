@@ -3,7 +3,7 @@ import { useState } from 'preact/hooks';
 const STATIC_FORMS_ACTION = 'https://api.staticforms.dev/submit';
 
 interface NotifyMeFormProps {
-	featureName: string;
+	readonly featureName: string;
 }
 
 /**
@@ -15,7 +15,7 @@ export default function NotifyMeForm({ featureName }: NotifyMeFormProps) {
 	const [submitted, setSubmitted] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 
-	const apiKey = typeof import.meta.env !== 'undefined' && import.meta.env.PUBLIC_STATIC_FORMS_API_KEY;
+	const apiKey = import.meta.env?.PUBLIC_STATIC_FORMS_API_KEY;
 
 	if (!apiKey) {
 		return (
