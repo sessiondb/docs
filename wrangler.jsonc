@@ -1,6 +1,9 @@
 {
-  // Static Astro site: use "wrangler pages deploy ./dist", NOT "wrangler deploy"
+  // Static Astro site. Cloudflare Pages may run "wrangler deploy" — this makes it work.
+  // For local/CI, prefer: npx wrangler pages deploy ./dist
   "name": "docs",
-  "compatibility_date": "2025-03-10"
-  // "pages_build_output_dir": "./dist"
+  "compatibility_date": "2025-03-10",
+  "assets": {
+    "directory": "./dist"
+  }
 }
