@@ -1,0 +1,86 @@
+---
+const steps = [
+	{
+		title: 'Connect',
+		description: 'Link your MySQL and Postgres instances.',
+	},
+	{
+		title: 'Proxy',
+		description: 'SessionDB masks credentials and acts as the secure gateway.',
+	},
+	{
+		title: 'Govern',
+		description: 'Approve requests, audit every query, and use AI to write SQL (BYOK).',
+	},
+];
+---
+
+<section class="how" aria-labelledby="how-heading">
+	<h2 id="how-heading" class="how__heading">How it works</h2>
+	<div class="how__grid">
+		{steps.map((step, i) => (
+			<article class="how__card">
+				<span class="how__number" aria-hidden="true">{i + 1}</span>
+				<h3 class="how__title">{step.title}</h3>
+				<p class="how__desc">{step.description}</p>
+			</article>
+		))}
+	</div>
+</section>
+
+<style>
+	.how {
+		padding: 3rem 1.5rem 4rem;
+		max-width: 64rem;
+		margin: 0 auto;
+	}
+
+	.how__heading {
+		font-size: 1.5rem;
+		font-weight: 700;
+		text-align: center;
+		margin: 0 0 2rem;
+		color: var(--color-text);
+	}
+
+	.how__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+		gap: 1.5rem;
+	}
+
+	.how__card {
+		padding: 1.5rem;
+		border: 1px solid var(--color-border);
+		border-radius: 0.5rem;
+		background: #fff;
+	}
+
+	.how__number {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2rem;
+		height: 2rem;
+		font-size: 0.875rem;
+		font-weight: 600;
+		background: var(--color-primary);
+		color: white;
+		border-radius: 50%;
+		margin-bottom: 0.75rem;
+	}
+
+	.how__title {
+		font-size: 1.125rem;
+		font-weight: 600;
+		margin: 0 0 0.5rem;
+		color: var(--color-text);
+	}
+
+	.how__desc {
+		font-size: 0.9375rem;
+		line-height: 1.5;
+		color: var(--color-muted);
+		margin: 0;
+	}
+</style>
