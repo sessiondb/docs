@@ -1,0 +1,66 @@
+---
+import { availableNowFeatures } from '../data/features';
+---
+
+<section class="features" aria-labelledby="features-heading">
+	<h2 id="features-heading" class="features__heading">Available now</h2>
+	<p class="features__subtext">The open source core you can use today.</p>
+	<div class="features__grid">
+		{availableNowFeatures.map((feature) => (
+			<article class="features__card" id={feature.id}>
+				<h3 class="features__title">{feature.title}</h3>
+				<p class="features__desc">{feature.description}</p>
+			</article>
+		))}
+	</div>
+</section>
+
+<style>
+	.features {
+		padding: 3rem 1.5rem 4rem;
+		max-width: 64rem;
+		margin: 0 auto;
+	}
+
+	.features__heading {
+		font-size: 1.5rem;
+		font-weight: 700;
+		text-align: center;
+		margin: 0 0 0.5rem;
+		color: var(--color-text);
+	}
+
+	.features__subtext {
+		text-align: center;
+		color: var(--color-muted);
+		margin: 0 0 2rem;
+		font-size: 1rem;
+	}
+
+	.features__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+		gap: 1.25rem;
+	}
+
+	.features__card {
+		padding: 1.25rem;
+		border: 1px solid var(--color-border);
+		border-radius: 0.5rem;
+		background: #fff;
+	}
+
+	.features__title {
+		font-size: 1rem;
+		font-weight: 600;
+		margin: 0 0 0.5rem;
+		color: var(--color-text);
+	}
+
+	.features__desc {
+		font-size: 0.875rem;
+		line-height: 1.5;
+		color: var(--color-muted);
+		margin: 0;
+	}
+</style>
