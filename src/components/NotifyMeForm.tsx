@@ -15,7 +15,7 @@ export default function NotifyMeForm({ featureName }: NotifyMeFormProps) {
 	const [submitted, setSubmitted] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 
-	const apiKey = import.meta.env?.PUBLIC_STATIC_FORMS_API_KEY;
+	const apiKey = 'sf_9259g3bm94fa0e7ndke0l1jk';
 
 	if (!apiKey) {
 		return (
