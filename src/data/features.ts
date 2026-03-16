@@ -68,6 +68,11 @@ export const availableNowFeatures: AvailableFeature[] = [
 		title: 'Query History & Scripts',
 		description: 'Run SQL, save scripts, and keep a searchable history of executions.',
 	},
+	{
+		id: '1-click-deploy',
+		title: '1-CLI Infrastructure',
+		description: 'Instantly download, deploy via Systemd, and manage configs using the scli binary.',
+	},
 ];
 
 /** Roadmap features (in development or planned). No commercial wording. */
