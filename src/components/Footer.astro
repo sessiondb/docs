@@ -1,4 +1,5 @@
 ---
+import DemoLink from './DemoLink';
 const githubUrl =
 	import.meta.env.PUBLIC_GITHUB_REPO_URL ?? "https://github.com";
 const discordUrl =
@@ -25,11 +26,13 @@ const discordUrl =
 							class="footer__link">Docs</a>
 					</li>
 					<li>
-						<a
-							href="https://demo.sessiondb.in"
-							rel="noopener noreferrer"
-							target="_blank"
-							class="footer__link">Demo</a>
+						<DemoLink client:load>
+							<a
+								href="https://demo.sessiondb.in"
+								rel="noopener noreferrer"
+								target="_blank"
+								class="footer__link">Demo</a>
+						</DemoLink>
 					</li>
 					<li>
 						<a href="#features-heading" class="footer__link"

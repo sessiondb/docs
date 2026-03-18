@@ -1,4 +1,5 @@
 ---
+import DemoLink from './DemoLink';
 const githubUrl = 'https://github.com/sessiondb';
 ---
 
@@ -8,11 +9,15 @@ const githubUrl = 'https://github.com/sessiondb';
 		<nav class="header__nav" aria-label="Main">
 			<a href="/docs/installation" class="header__link">Docs</a>
 			<a href="#features-heading" class="header__link">Features</a>
-			<a href="https://demo.sessiondb.in" rel="noopener noreferrer" target="_blank" class="header__link">Demo</a>
+			<DemoLink client:load>
+				<a href="https://demo.sessiondb.in" rel="noopener noreferrer" target="_blank" class="header__link">Demo</a>
+			</DemoLink>
 		</nav>
 		<div class="header__ctas">
 			<a href={githubUrl} rel="noopener noreferrer" target="_blank" class="header__btn header__btn--outline">View on GitHub</a>
-			<a href="https://demo.sessiondb.in" rel="noopener noreferrer" target="_blank" class="header__btn header__btn--primary">Try Demo</a>
+			<DemoLink client:load>
+				<a href="https://demo.sessiondb.in" rel="noopener noreferrer" target="_blank" class="header__btn header__btn--primary">Try Demo</a>
+			</DemoLink>
 		</div>
 	</div>
 </header>

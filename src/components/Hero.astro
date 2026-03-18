@@ -1,4 +1,5 @@
 ---
+import DemoLink from './DemoLink';
 const githubUrl = 'https://github.com/sessiondb';
 ---
 
@@ -18,9 +19,11 @@ const githubUrl = 'https://github.com/sessiondb';
 			<a class="hero__cta hero__cta--primary" href={githubUrl} rel="noopener noreferrer" target="_blank">
 				View on GitHub
 			</a>
-			<a class="hero__cta hero__cta--secondary" href="https://demo.sessiondb.in" rel="noopener noreferrer" target="_blank">
-				Try the Demo
-			</a>
+			<DemoLink client:load>
+				<a class="hero__cta hero__cta--secondary" href="https://demo.sessiondb.in" rel="noopener noreferrer" target="_blank">
+					Try the Demo
+				</a>
+			</DemoLink>
 		</div>
 	</div>
 	<div class="hero__visual">
